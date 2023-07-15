@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-landing-page
+spec:
+  selector:
+    matchLabels:
+      app: simple-landing-page
+  template:
+    metadata:
+      labels:
+        app: simple-landing-page
+    spec:
+      containers:
+        - image: ghcr.io/la-cc/simple-landing-page:latest
+          name: nginx
+          ports:
+            - containerPort: 8080
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
