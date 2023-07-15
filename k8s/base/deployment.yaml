@@ -12,9 +12,11 @@ spec:
         app: simple-landing-page
     spec:
       containers:
-        - image: ghcr.io/la-cc/simple-landing-page:latest
+        - image: ghcr.io/la-cc/simple-landing-page:0.0.1
           name: nginx
           ports:
-            - containerPort: 8080
+            - containerPort: 80
+              name: http
+              protocol: TCP
       dnsPolicy: ClusterFirst
       restartPolicy: Always
