@@ -253,21 +253,28 @@ body {
 }
 
 .gif-container {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 100vh);
-    /* fill remaining height */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.gif-container.visible {
+    visibility: visible;
 }
 
 .scroll-gif {
     width: 60vw;
-    /* 70% of viewport width */
     height: auto;
 }
+
 
 
 .description-container a {
@@ -290,4 +297,19 @@ body {
 
 .company-link:hover {
     color: #ff0000;
+}
+
+
+.pod-name {
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-size: 12px;
+    font-family: monospace;
+    border-radius: 4px;
+    z-index: 1000;
+    pointer-events: none;
 }

@@ -61,6 +61,18 @@
     </div>
 
     <script src="script.js"></script>
+
+
+    <div id="pod-name" class="pod-name"></div>
+
+    <script>
+        fetch('/podname')
+            .then(res => res.text())
+            .then(name => {
+                document.getElementById('pod-name').textContent = name.trim();
+            })
+            .catch(err => console.error('Podname fetch failed:', err));
+    </script>
 </body>
 
 </html>
